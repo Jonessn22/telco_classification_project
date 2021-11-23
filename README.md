@@ -9,18 +9,17 @@ Telco Communications is a fictional telecommunications company looking to reduce
 
 
 ### B. Business Goals
-Management already knows that customers on month to month payment plans are churning at higher rates but removing the month to month payment option is not feasible at this time. The goal is to look at the results from the best performing machine learning model and determine which of our existing customers are at a high risk for churning. I will then provide recommendations on how we can incentivize these customers to remain with Telco, as the cost of retaining an existing customer is much less than the cost of acquiring a new ones.
+Management already knows that customers on month to month payment plans are churning at higher rates but removing the month to month payment option is not feasible at this time. The goal is to look at the results from the best performing machine learning model and determine which of our existing customers are at a high risk for churning. I will then provide recommendations on how we can incentivize these customers to remain with Telco, as the cost of retaining an existing customer is much less than the cost of acquiring a new one.
 
 
 ### C. Deliverables
 - final_project_report.ipynb (<i>Jupyter Notebook for project presentation walkthrough</i>)
-- draft_project_report.ipynb (<i>working Jupyter Notebook</i>)
-- predictions.csv (<i>working Jupyter Notebook</i>)
+- working_project_report.ipynb (<i>working Jupyter Notebook</i>)
+- predictions.csv (<i>...</i>)
 - acquire.py and prepapre.py (<i>modules containing data acquisition and preparation functions, respectively</i>)
 
 ## 2. Project Information
-Positive: Customer churns (<i>leaves Telco for competitor</i>)<br>
-Negative: Customer does not church (<i>remains a Telco customer</i>)
+
 ### A. Initial Hypothesis
 
 
@@ -52,7 +51,10 @@ Project Steps Moving through the Data Science Pipeline
 ---
 Plan >> :large_blue_circle: <b>Acquire</b> >> Prepare >> Explore >> Model >> Evaluate
 #### 1. Acquire Data
-
+- Establish connection to Codeup DB
+- Read telco DB into a DataBase and store in raw_data variable
+- Cache data into local file, telco_data.csv, if one does not already exist
+- Create acquire.py that stores data acquistion functions that perform the above steps
 
 ---
 Plan >> Acquire >> :large_blue_circle: <b>Prepare</b> >> Explore >> Model >> Evaluate 
@@ -62,7 +64,10 @@ Plan >> Acquire >> :large_blue_circle: <b>Prepare</b> >> Explore >> Model >> Eva
 ---
 Plan >> Acquire >> Prepare >> :large_blue_circle: <b>Explore</b> >> Model >> Evaluate
 #### 3. Explore Data
-
+Positive: Customer churns (<i>leaves Telco for competitor</i>)<br>
+Negative: Customer does not church (<i>remains a Telco customer</i>)<br>
+> Initial Hypothesis:<br>
+> (My initial hypothesis)
 
 ---
 Plan >> Acquire >> Prepare >> Explore >> :large_blue_circle: <b>Model</b> >> Evaluate
