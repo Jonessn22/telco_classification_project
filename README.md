@@ -4,7 +4,7 @@ Codeup | Hopper Cohort<br>
 Presented on Monday, November 29, 2021
 
 ## 0. Table of Contents
-[1. Project Overview] (## 1. Project Overview)
+[1. Project Overview] (#1.project-overview)
 [2. Project Information] (## 2. Project Information)
 [3. Process] (## 3. Process)
 [4. Key Findings and Takeaways] (## 4. Key Findings and Takeaways)
