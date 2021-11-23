@@ -25,7 +25,9 @@ Negative: Customer does not church (<i>remains a Telco customer</i>)
 - Read project specs
 - Create Trello Board
 - Create local project folder and remote Github repository
-- Create this README.file<br><br>
+- Create this README.file
+
+
 Plan >> :large_blue_circle: <b>Acquire</b> >> Prepare >> Explore >> Model >> Evaluate
 #### 1. Acquire Data
 Plan >> Acquire >> :large_blue_circle: <b>Prepare</b> >> Explore >> Model >> Evaluate 
