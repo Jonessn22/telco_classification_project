@@ -20,6 +20,6 @@ Negative: Customer does not church (<i>remains a Telco customer</i>)
 ### A. Initial Hypothesis
 
 ### 3. Process
-:large_green_circle:Plan >> Acquire >> Prepare >> Explore >> Model >> Evaluate 
+:large_blue_circle:Plan >> Acquire >> Prepare >> Explore >> Model >> Evaluate 
 
 ## 4. Key Findings and Takeaways
