@@ -27,12 +27,28 @@ Negative: Customer does not church (<i>remains a Telco customer</i>)
 - Create local project folder and remote Github repository
 - Create this README.file
 
-
+---
 Plan >> :large_blue_circle: <b>Acquire</b> >> Prepare >> Explore >> Model >> Evaluate
 #### 1. Acquire Data
+
+
+---
 Plan >> Acquire >> :large_blue_circle: <b>Prepare</b> >> Explore >> Model >> Evaluate 
-Plan >> Acquire >> Prepare >> :large_blue_circle: <b>Explore</b> >> Model >> Evaluate 
-Plan >> Acquire >> Prepare >> Explore >> :large_blue_circle: <b>Model</b> >> Evaluate 
+#### 2. Prepare Data
+
+
+---
+Plan >> Acquire >> Prepare >> :large_blue_circle: <b>Explore</b> >> Model >> Evaluate
+#### 3. Explore Data
+
+
+---
+Plan >> Acquire >> Prepare >> Explore >> :large_blue_circle: <b>Model</b> >> Evaluate
+#### 4. Data Modeling
+
+
+----
 Plan >> Acquire >> Prepare >> Explore >> Model >> :large_blue_circle: <b>Evaluate</b> 
+#### 4. Model Evaluation
 
 ## 4. Key Findings and Takeaways
