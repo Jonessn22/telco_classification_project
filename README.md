@@ -20,6 +20,17 @@ Negative: Customer does not church (<i>remains a Telco customer</i>)
 ### A. Initial Hypothesis
 
 ### 3. Process
-:large_blue_circle:Plan >> Acquire >> Prepare >> Explore >> Model >> Evaluate 
+:large_blue_circle: <b>Plan</b> >> Acquire >> Prepare >> Explore >> Model >> Evaluate
+#### 0. Plan Project
+- Read project specs
+- Create Trello Board
+- Create local project folder and remote Github repository
+- Create this README.file<br><br>
+Plan >> :large_blue_circle: <b>Acquire</b> >> Prepare >> Explore >> Model >> Evaluate
+#### 1. Acquire Data
+Plan >> Acquire >> :large_blue_circle: <b>Prepare</b> >> Explore >> Model >> Evaluate 
+Plan >> Acquire >> Prepare >> :large_blue_circle: <b>Explore</b> >> Model >> Evaluate 
+Plan >> Acquire >> Prepare >> Explore >> :large_blue_circle: <b>Model</b> >> Evaluate 
+Plan >> Acquire >> Prepare >> Explore >> Model >> :large_blue_circle: <b>Evaluate</b> 
 
 ## 4. Key Findings and Takeaways
