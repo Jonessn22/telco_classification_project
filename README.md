@@ -19,7 +19,23 @@ Positive: Customer churns (<i>leaves Telco for competitor</i>)<br>
 Negative: Customer does not church (<i>remains a Telco customer</i>)
 ### A. Initial Hypothesis
 
-### 3. Process
+### B. Steps to Reproduce
+:white_check_mark: Read this README.md file<br>
+:white_medium_square: Clone my Github repo
+:white_medium_square: Download the following
+- telco_data.csv
+- env.py (<i>with your own host, username, and password, hide using .gitignore</i>)
+- acquire.py
+- prepapre.py
+
+### C. Indices and References
+<b>Data Dictionary</b><br>
+<br>
+<b>File Directory</b>
+
+## 3. Process
+Project Steps Moving through the Data Science Pipeline
+---
 :large_blue_circle: <b>Plan</b> >> Acquire >> Prepare >> Explore >> Model >> Evaluate
 #### 0. Plan Project
 - Read project specs
