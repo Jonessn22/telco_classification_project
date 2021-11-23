@@ -24,7 +24,10 @@ Management already knows that customers on month to month payment plans are chur
 ### B. Steps to Reproduce
 :white_check_mark: Read this README.md file<br>
 :white_medium_square: Clone my Github repo to your local directory<br>
-:white_medium_square: Download your own env.py file to your local directory (<i>with your host, username, and password and hide using .gitignore</i>)
+:white_medium_square: Create your own local env.py file with your host, username, and password (<i>hide using .gitignore</i>)
+:white_medium_square: Python 3 installed, along with the following libraries:
+- matplotlib
+- sklearn
 
 ---
 ## 3. Key Findings and Takeaways
