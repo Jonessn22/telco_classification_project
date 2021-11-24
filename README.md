@@ -3,7 +3,7 @@ Stephanie Jones<br>
 Codeup | Hopper Cohort<br>
 Presented on Monday, November 29, 2021
 
-## 1. Project Overview
+## I. Project Overview
 ### A. Project Description
 >Telco Communications is a fictional telecommunications company looking to reduce customer churn (aka customer attrition, aka >customers leaving Telco for competitors). I will be using Telco customer data and machine learning methodologies to determine >what is driving customer churn and, with that information, providing management (<i>non-data scientists</i>) with recommendations >for reducing customer churn.
 
@@ -18,7 +18,7 @@ Presented on Monday, November 29, 2021
 - predictions.csv (<i>a csv file containing the churn predictions from my best performing model and the actual churn values from the test data set</i>)
 - acquire.py and prepapre.py (<i>modules containing data acquisition and preparation functions, respectively</i>)
 
-## 2. Project Information
+## II. Project Information
 ### A. Data Dictionary
 
 ### B. Steps to Reproduce
@@ -31,10 +31,10 @@ Presented on Monday, November 29, 2021
 >- graphviz
 >- sklearn
 
-## 3. Key Findings and Takeaways
+## III. Key Findings and Takeaways
 >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit >duis tristique sollicitudin nibh sit amet commodo. Viverra vitae congue eu consequat ac felis donec et. Non odio euismod lacinia >at quis risus sed. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Pulvinar sapien et ligula ullamcorper malesuada >proin libero nunc consequat. Lobortis elementum nibh tellus molestie nunc. Lacus viverra 
 
-## 4. Process | Project Pipeline
+## IV. Process | Project Pipeline
 ###### Steps Moving through the Data Science Pipeline
 ---
 :large_blue_circle: <b>Plan</b> >> Acquire >> Prepare >> Explore >> Model >> Evaluate >> Conclusions
@@ -78,7 +78,7 @@ Plan >> Acquire >> Prepare >> Explore >> Model >> :large_blue_circle: <b>Evaluat
 #### 6. Conclusions
 >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit >duis tristique sollicitudin nibh sit amet commodo. Viverra vitae congue eu consequat ac felis donec et. Non odio euismod lacinia >at quis risus sed. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Pulvinar sapien et ligula ullamcorper malesuada >proin libero nunc consequat. Lobortis elementum nibh tellus molestie nunc. Lacus viverra vitae congue eu consequat ac felis. Eget >mi proin sed libero enim sed. Turpis egestas integer eget aliquet nibh praesent tristique. 
 
-## 5. Recommendations and Next Steps
+## V. Recommendations and Next Steps
 >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit >duis tristique sollicitudin nibh sit amet commodo. Viverra vitae congue eu consequat ac felis donec et. Non odio euismod lacinia >at quis risus sed. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Pulvinar sapien et ligula ullamcorper malesuada >proin libero nunc consequat. Lobortis elementum nibh tellus molestie nunc. Lacus 
 
 # Addtional Project Information
