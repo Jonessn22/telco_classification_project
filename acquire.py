@@ -1,8 +1,34 @@
 # Functions to acquire Telco data
 
-import pandas as pd
+# ******ignore warnings
+import warnings
+warnings.filterwarnings("ignore")
+
+
 import numpy as np
+import pandas as pd
+from scipy import stats
+import os
+
+
+# ******files/data
+from pydataset import data
 import env
+# import acquire
+# import prepare
+
+
+# ******visualizations
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+# ******sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import export_graphviz
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 
 # -------------------------------------
 # Part I | Input Functions

@@ -73,13 +73,15 @@ Plan >> Acquire >> Prepare >> Explore >> Model >> :large_blue_circle: <b>Evaluat
 #### 5. Model Evaluation
 
 ----
-Plan >> Acquire >> Prepare >> Explore >> Model >> :large_blue_circle: <b>Evaluate</b> >> Conclusions
+Plan >> Acquire >> Prepare >> Explore >> Model >> Evaluate >> :large_blue_circle: <b>Conclusions</b>
 
 #### 6. Conclusions
 >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit >duis tristique sollicitudin nibh sit amet commodo. Viverra vitae congue eu consequat ac felis donec et. Non odio euismod lacinia >at quis risus sed. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Pulvinar sapien et ligula ullamcorper malesuada >proin libero nunc consequat. Lobortis elementum nibh tellus molestie nunc. Lacus viverra vitae congue eu consequat ac felis. Eget >mi proin sed libero enim sed. Turpis egestas integer eget aliquet nibh praesent tristique. 
 
 ## V. Recommendations and Next Steps
 >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit >duis tristique sollicitudin nibh sit amet commodo. Viverra vitae congue eu consequat ac felis donec et. Non odio euismod lacinia >at quis risus sed. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Pulvinar sapien et ligula ullamcorper malesuada >proin libero nunc consequat. Lobortis elementum nibh tellus molestie nunc. Lacus 
+#### If I had more time...
+>I would like to explore the x11 rows that had blank values for total_charges (dropped from DataFrame during 02_prepare)
 
 # Addtional Project Information
 Technical Skills
