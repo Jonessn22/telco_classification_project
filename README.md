@@ -35,7 +35,7 @@ Presented on Monday, November 29, 2021
 >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit >duis tristique sollicitudin nibh sit amet commodo. Viverra vitae congue eu consequat ac felis donec et. Non odio euismod lacinia >at quis risus sed. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Pulvinar sapien et ligula ullamcorper malesuada >proin libero nunc consequat. Lobortis elementum nibh tellus molestie nunc. Lacus viverra 
 
 ## 4. Process | Project Pipeline
-Steps Moving through the Data Science Pipeline
+###### Steps Moving through the Data Science Pipeline
 ---
 :large_blue_circle: <b>Plan</b> >> Acquire >> Prepare >> Explore >> Model >> Evaluate >> Conclusions
 #### 0. Plan Project
