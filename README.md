@@ -60,11 +60,11 @@ Train: 3937 ~56% (~70% of ~80%)<br>
 Validate: 1688 ~ 24% (~30% of 80%)<br> 
 Test: 1407 ~ 20%<br>
 > Cleaning<br>
- a. removed x11 rows where total_charges was an empty valuie
- b. changed total_charges values from object to float dtype
- c. created dummy variables for object columns:
-                                  'churn', 'contract_type', 'dependents',
-                                  'device_protection', 'gender', 'internet_service_type', 
+ a. removed x11 rows where total_charges was an empty value<br>
+ b. changed total_charges values from object to float dtype<br>
+ c. created dummy variables for object columns:<br>
+                                  'churn', 'contract_type', 'dependents',<br>
+                                  'device_protection', 'gender', 'internet_service_type',<br>
                                   'multiple_lines', 'online_backup', 'online_security', 
                                   'paperless_billing', 'partner', 'payment_type', 'phone_service', 
                                   'streaming_movies', 'streaming_tv', 'tech_support'
