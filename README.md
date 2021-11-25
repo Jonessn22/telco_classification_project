@@ -63,35 +63,35 @@ Test: 1407 ~ 20%<br>
 a. removed x11 rows where total_charges was an empty value<br>
 b. changed total_charges values from object to float dtype<br>
 c. created dummy variables for object columns:<br>
- 'churn', 'contract_type', 'dependents',<br>
->                                 'device_protection', 'gender', 'internet_service_type',
-                                  'multiple_lines', 'online_backup', 'online_security', 
-                                  'paperless_billing', 'partner', 'payment_type', 'phone_service', 
-                                  'streaming_movies', 'streaming_tv', 'tech_support'
+>'churn', 'contract_type', 'dependents',
+'device_protection', 'gender', 'internet_service_type',
+'multiple_lines', 'online_backup', 'online_security', 
+'paperless_billing', 'partner', 'payment_type', 'phone_service', 
+'streaming_movies', 'streaming_tv', 'tech_support'
                                   
 d. concatenated dummy columns with the original df<br>
 e. dropped unnecessary columns and customer_id column, which is not needed for exploration and modeling:<br>
 - e-1. dummy columns w/boolean values:<br>
->                               'churn_No', 'dependents_No', 'gender_Female', 'paperless_billing_No',
-                                'partner_No', 'phone_service_No'
+>'churn_No', 'dependents_No', 'gender_Female', 'paperless_billing_No',
+'partner_No', 'phone_service_No'
 
 - e-2. dropped unneeded customer_id column<br>
 - e-3.dropped redundant columns:<br>
 >                                'contract_type_id', 'internet_service_type_id', 'payment_type_id'
 
 f. renamed columns to be shorter and more understable:<br>
->                                  'churn_Yes': 'churn', 'contract_type_Month-to-month': 'contract_mtm',
-                                  'contract_type_One year': 'contract_one_yr', 'contract_type_Two year':
-                                  'contract_two_yr', 'dependents_Yes': 'dependents', 'gender_Male': 
-                                  'gender_m', 'internet_service_type_DSL': 'internet_dsl', 
-                                  'internet_service_type_Fiber optic': 'internet_fiber', 
-                                  'internet_service_type_None': 'internet_none', 'paperless_billing_Yes':
-                                  'paperless_bill', 'partner_Yes': 'partner', 
-                                  'payment_type_Bank transfer (automatic)': 'pay_xfer_auto', 
-                                  'payment_type_Credit card (automatic)': 'pay_credit_auto', 
-                                  'payment_type_Electronic check': 'pay_echeck', 
-                                  'payment_type_Mailed check':'pay_mail', 'phone_service_Yes': 
-                                  'phone_service'
+>'churn_Yes': 'churn', 'contract_type_Month-to-month': 'contract_mtm',
+'contract_type_One year': 'contract_one_yr', 'contract_type_Two year':
+'contract_two_yr', 'dependents_Yes': 'dependents', 'gender_Male': 
+'gender_m', 'internet_service_type_DSL': 'internet_dsl', 
+'internet_service_type_Fiber optic': 'internet_fiber', 
+'internet_service_type_None': 'internet_none', 'paperless_billing_Yes':
+'paperless_bill', 'partner_Yes': 'partner', 
+'payment_type_Bank transfer (automatic)': 'pay_xfer_auto', 
+'payment_type_Credit card (automatic)': 'pay_credit_auto', 
+'payment_type_Electronic check': 'pay_echeck', 
+'payment_type_Mailed check':'pay_mail', 'phone_service_Yes': 
+'phone_service'
 
 g. lowercased column names
 
