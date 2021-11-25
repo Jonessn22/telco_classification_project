@@ -77,7 +77,7 @@ e. dropped unnecessary columns and customer_id column, which is not needed for e
 
 - e-2. dropped unneeded customer_id column<br>
 - e-3.dropped redundant columns:<br>
->                                'contract_type_id', 'internet_service_type_id', 'payment_type_id'
+>'contract_type_id', 'internet_service_type_id', 'payment_type_id'
 
 f. renamed columns to be shorter and more understable:<br>
 >'churn_Yes': 'churn', 'contract_type_Month-to-month': 'contract_mtm',
