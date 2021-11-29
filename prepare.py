@@ -7,118 +7,78 @@ from sklearn.model_selection import train_test_split
 
 import pandas as pd
 
-# Feeder function no1 of 2
+# This function will feed into our main prep_telco function
 
-def clean_telco(df):
+def split_telco(df):
     '''
-    This function takes in the raw DataFrame as an argument and returns a cleaned DataFrame, performs the following cleaning actions:
-        a. removes x11 rows where total_charges in an empty valuie
-        b. changes total_charges values from object to float dtype
-        c. creates dummy variables for object columns
-        d. concatenates dummy columns with the original df
-        e. drops unnecessary columns and customer_id column, which is not needed for exploration and modeling
-        f. renames columns to be shorter and more understable
-        g. lowercases column names
-    
-    This is the first of two functions that will feed into our final clean_split() prepare function.
-    '''
-    
-#                                       a. removing empty total_charges values
-    df_empty_rows = df[df.total_charges != ' ']
-
-#                                       b. changing total_charges dtype: object --> float
-    df_empty_rows.total_charges = df_empty_rows.total_charges.astype(float)
-    
-#                                       c. creating dummy variables for object columns
-    dummies_df = pd.get_dummies(df_empty_rows[['churn', 'contract_type', 'dependents', 
-                                               'device_protection', 'gender', 'internet_service_type', 
-                                               'multiple_lines', 'online_backup', 'online_security', 
-                                               'paperless_billing', 'partner', 'payment_type', 'phone_service', 
-                                               'streaming_movies', 'streaming_tv', 'tech_support']])
-    
-#                                       d. concatenating dummy columns with original df
-    df_dummies = pd.concat([df_empty_rows, dummies_df], axis = 1)
-    
-#                                       e. dropping unnecessary columns
-    df_drop = df_dummies.drop(columns = ['churn', 'contract_type', 'dependents', 
-                                               'device_protection', 'gender', 'internet_service_type', 
-                                               'multiple_lines', 'online_backup', 'online_security', 
-                                               'paperless_billing', 'partner', 'payment_type', 'phone_service', 
-                                               'streaming_movies', 'streaming_tv', 'tech_support', 
-                                         
-#                                          e-1. dummy columns w/boolean values                                            
-                                             'churn_No', 'dependents_No', 'gender_Female', 'paperless_billing_No',
-                                             'partner_No', 'phone_service_No',
-                                         
-#                                          e-2. dropped unneeded customer_id column                                  
-                                             'customer_id', 
-                                         
-#                                          e-3.dropped redundant columns
-                                             'contract_type_id', 'internet_service_type_id', 'payment_type_id'])
-
-#                                       f. renaming columns
-    df_clean = df_drop.rename(columns = {'churn_Yes': 'churn', 'contract_type_Month-to-month': 'contract_mtm',
-                                          'contract_type_One year': 'contract_one_yr', 'contract_type_Two year':
-                                          'contract_two_yr', 'dependents_Yes': 'dependents', 'gender_Male': 
-                                          'gender_m', 'internet_service_type_DSL': 'internet_dsl', 
-                                          'internet_service_type_Fiber optic': 'internet_fiber', 
-                                          'internet_service_type_None': 'internet_none', 'paperless_billing_Yes':
-                                          'paperless_bill', 'partner_Yes': 'partner', 
-                                          'payment_type_Bank transfer (automatic)': 'pay_xfer_auto', 
-                                          'payment_type_Credit card (automatic)': 'pay_credit_auto', 
-                                          'payment_type_Electronic check': 'pay_echeck', 
-                                          'payment_type_Mailed check':'pay_mail', 'phone_service_Yes': 
-                                          'phone_service'
-        
-                                        })
-    
-#                                       g. lowercare column names
-    df_clean.columns = df_clean.columns.str.lower()
-    
-    
-    return df_clean
-
-
-from sklearn.model_selection import train_test_split
-
-# ----------------------------
-# Feeder function no2 of 2
-
-def train_validate_test_split(cleaned_df, seed = 123):
-    '''
-    This function takes in as arguments the cleaned DataFrame and a random seed and splits the DataFrame,
-    first into two samples, train_and_validate (80%) and test (20%). It then splits the train_and_validate
-    into train (70% of the 80%, 56% of total) and validate (30% of the 80%, 24% of the total).
+    This function takes in as arguments cleaned DataFrame and a random seed and splits the cleaned DataFrame,
+    first into two samples, train_and_validate (80%) and test (20%). It stratifies the split on our target variable
+    ----> churn. It then splits the train_and_validate into train (70% of the 80%, 56% of total) and validate 
+    (30% of the 80%, 24% of the total). again, stratifying on churn.
     The function returns x3 DataFrames, train, validate, and test.
     
-    This is the second of two functions that will feed into our final clean_split() prepare function.
+    This function is fed into our main prep_telco function.
     '''
     
-    train_and_validate, test = train_test_split(
-                                        cleaned_df, 
+    train_validate, test = train_test_split(
+                                        df, 
                                         test_size = 0.2, 
-                                        random_state = seed, 
-                                        stratify = cleaned_df.churn)
+                                        random_state = 123, 
+                                        stratify = df.churn)
     
     train, validate = train_test_split(
-                                        train_and_validate,
+                                        train_validate,
                                         test_size = 0.3,
-                                        random_state = seed,
-                                        stratify = train_and_validate.churn)
+                                        random_state = 123,
+                                        stratify = train_validate.churn)
     
     return train, validate, test
 
-# ----------------------------
-# Main clean and split function
+# --------------------------------------------------------------------
+# Main Clean and Split Function
 
-def clean_split_telco_data(df):
+def prep_telco(df):
     '''
-    This is the function that the above two functions are fed into. It runs the clean_telo() and 
-    train_test_validate_split() functions. It takes in the original, raw DataFrame and a random seed
-    as arguments and returns cleaned and split train, test, and validate DataFrames.
+    This function takes in the raw DataFrame as an argument and returns a cleaned, split DataFrame, performing the following cleaning actions:
+    a. Drop unecessary columns
+    b. Map binary, yes/no to 1/0
+    c. Map gender column male/female to 1/0
+    d. split the data
+
     '''
     
-    cleaned_df = clean_telco(df)
-    train, validate, test = train_validate_test_split(cleaned_df, seed = 123)
+#                                       a. drop unnecessary columns
+    df.drop(columns = ['total_charges', 'customer_id', 'multiple_lines', 'online_security', 'online_backup', 'device_protection', 
+                    'streaming_tv', 'tech_support', 'streaming_movies',  'contract_type', 'internet_service_type','payment_type'], 
+                    inplace = True)
+
+#                                       b. map binary, yes/no columns
+    float_cols = [] #creating empty list to hold floats
+    int_cols = [] #creating empty list to hold ints
+    obj_cols = [] #creating empty list to hold objects
+
+    for col in df.columns: #for loop to cycle through each df column and add to list according to dtype
+        if df[col].dtype == 'float64':
+            float_cols.append(col)
+        elif df[col].dtype == 'int64':
+            int_cols.append(col)
+        else:
+            obj_cols.append(col)
+
+    obj_cols.remove('gender') #will encode gender separately since no yes/no value
+
+    for col in obj_cols: #the for loop that will map the yes/no columns
+        df[col] = df[col].map({'Yes': 1, 'No': 0})
+
+#                                    c. map gender column
+    df.gender = df.gender.map({'Male': 1, 'Female': 0}) #to map gender
+
+#                                    d. split the data
+    train, validate, test = split_telco(df)
     
+    
+
     return train, validate, test
+
+
+

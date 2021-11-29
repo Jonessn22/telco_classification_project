@@ -55,90 +55,59 @@ Plan >> :large_blue_circle: <b>Acquire</b> >> Prepare >> Explore >> Model >> Eva
 ---
 Plan >> Acquire >> :large_blue_circle: <b>Prepare</b> >> Explore >> Model >> Evaluate >> Conclusions
 #### 2. Prepare Data
-
-Train: 3937 ~56% (~70% of ~80%)<br>
-Validate: 1688 ~ 24% (~30% of 80%)<br> 
-Test: 1407 ~ 20%<br>
 ##### Cleaning
-a. removed x11 rows where total_charges was an empty value<br>
-b. changed total_charges values from object to float dtype<br>
-c. created dummy variables for object columns:<br>
->'churn', 'contract_type', 'dependents',
-'device_protection', 'gender', 'internet_service_type',
-'multiple_lines', 'online_backup', 'online_security', 
-'paperless_billing', 'partner', 'payment_type', 'phone_service', 
-'streaming_movies', 'streaming_tv', 'tech_support'
-                                  
-d. concatenated dummy columns with the original df<br>
-e. dropped unnecessary columns and customer_id column, which is not needed for exploration and modeling:<br>
-- e-1. dummy columns w/boolean values:<br>
->'churn_No', 'dependents_No', 'gender_Female', 'paperless_billing_No',
-'partner_No', 'phone_service_No'
+>a. Dropped unecessary columns
+b. Map binary, yes/no to 1/0
+c. Map gender column male/female to 1/0
 
-- e-2. dropped unneeded customer_id column<br>
-- e-3.dropped redundant columns:<br>
->'contract_type_id', 'internet_service_type_id', 'payment_type_id'
-
-f. renamed columns to be shorter and more understable:<br>
->'churn_Yes': 'churn', 'contract_type_Month-to-month': 'contract_mtm',
-'contract_type_One year': 'contract_one_yr', 'contract_type_Two year':
-'contract_two_yr', 'dependents_Yes': 'dependents', 'gender_Male': 
-'gender_m', 'internet_service_type_DSL': 'internet_dsl', 
-'internet_service_type_Fiber optic': 'internet_fiber', 
-'internet_service_type_None': 'internet_none', 'paperless_billing_Yes':
-'paperless_bill', 'partner_Yes': 'partner', 
-'payment_type_Bank transfer (automatic)': 'pay_xfer_auto', 
-'payment_type_Credit card (automatic)': 'pay_credit_auto', 
-'payment_type_Electronic check': 'pay_echeck', 
-'payment_type_Mailed check':'pay_mail', 'phone_service_Yes': 
-'phone_service'
-
-g. lowercased column names
 
 ##### Splitting
-a. split the cleaned telco data, first into train_and_validate (80%) and test (20%)
+>a. split the cleaned telco data, first into train_and_validate (80%) and test (20%)<br>
 b. splt the train_and_validate into train (70% of the 80%, 56% of the total) and validate (30% of the 80%, 24% of the total)
 
 ---
 Plan >> Acquire >> Prepare >> :large_blue_circle: <b>Explore</b> >> Model >> Evaluate >> Conclusions
 #### 3. Explore Data
-Positive: Customer churns (<i>leaves Telco for competitor</i>)<br>
-Negative: Customer does not church (<i>remains a Telco customer</i>)<br>
-> Initial Hypothesis:<br>
-> (My initial hypothesis)
+<b>Initial Questions<br>
+1. Do customers who pay a certain way churn more?
+- Customers who pay by eCheck have highest churn
+
+2. Do customers with a certain type of internet service churn more?
+- Customers with Fiber have highest churn
+- Customers with no internet service have lowest churn
+
+3. Do customers with lower monthly charges churn less than those with higher monthly charges?
+- There is not much correlation between monthly charges and tenure
+- Most of our customers who are churning have high monthly_charges and churning earlier in tenure
+    - The higher a customer’s tenure the less likely they are to churn
 
 
 ---
 Plan >> Acquire >> Prepare >> Explore >> :large_blue_circle: <b>Model</b> >> Evaluate >> Conclusions
 #### 4. Data Modeling
+>Baseline Accuracy: 0.73
 
+>Model 1: Decision Tree with max_depth of 2<br>
+Accuracy of Model 1 Decision Tree classifier on training set: 0.77<br>
+Accuracy of Model 1 Decision Tree classifier on validate set: 0.76<br>
+
+>Model 2: Decision Tree with max_depth of 4<br>
+Accuracy of Model 2 Decision Tree classifier on training set: 0.77<br>
+Accuracy of Model 2 Decision Tree classifier on validate set: 0.76<br>
+
+>Model 3: Decision Tree with max_depth of 6<br>
+Accuracy of Model 3 Decision Tree classifier on training set: 0.78<br>
+Accuracy of Model 3 Decision Tree classifier on validate set: 0.77
 ----
 Plan >> Acquire >> Prepare >> Explore >> Model >> :large_blue_circle: <b>Evaluate</b> >> Conclusions
-#### 5. Model Evaluation
 
 ----
 Plan >> Acquire >> Prepare >> Explore >> Model >> Evaluate >> :large_blue_circle: <b>Conclusions</b>
 
-#### 6. Conclusions
+#### 6. Conclusions, Recommendations, and Next Steps
 >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit >duis tristique sollicitudin nibh sit amet commodo. Viverra vitae congue eu consequat ac felis donec et. Non odio euismod lacinia >at quis risus sed. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Pulvinar sapien et ligula ullamcorper malesuada >proin libero nunc consequat. Lobortis elementum nibh tellus molestie nunc. Lacus viverra vitae congue eu consequat ac felis. Eget >mi proin sed libero enim sed. Turpis egestas integer eget aliquet nibh praesent tristique. 
 
-## V. Recommendations and Next Steps
->Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit >duis tristique sollicitudin nibh sit amet commodo. Viverra vitae congue eu consequat ac felis donec et. Non odio euismod lacinia >at quis risus sed. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Pulvinar sapien et ligula ullamcorper malesuada >proin libero nunc consequat. Lobortis elementum nibh tellus molestie nunc. Lacus 
 #### If I had more time...
->Explore the x11 rows that had blank values for total_charges (dropped from DataFrame during 02_prepare)
-
->Shorten some of the longer column names
-
-# Addtional Project Information
-Technical Skills
-> - Structured Query Language
-> - Python
-> - Markdown
-> - Jupyter Notebok
-> - Data Cleaning
-> - Statistical Modeling
-
-Soft Skills
-> - Visual Communication
-> - Technical Communication
-> - Information Structure and Organization
+>Explore the x11 rows that had blank values for total_charges<br>
+>Compare other variables against eCheck payment type to see what types of customers are paying that way<br>
+>Bin 'monthly_charges' and 'total_charges' by quartiles, decitiles and look for any patterns, additional insights
